@@ -4,20 +4,26 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>To-do List</title>
   </head>
   <body>
 
-    <input type="text" name="" value="" placeholder="New task">
+    <div id="root">
 
-    <input type="button" name="" value="Create">
+      <input type="text" name="" value="" placeholder="New task" v-model="newTask">
 
-    <ul>
-      <li>Meditate <i class="far fa-trash-alt"></i>
-      </li>
-    </ul>
+      <input type="button" name="" value="Create">
 
+      <ul>
+        <li> {{newTask}} <i class="far fa-trash-alt" @click="trash"></i>
+        </li>
+      </ul>
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
 
   </body>
 </html>
