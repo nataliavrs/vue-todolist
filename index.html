@@ -24,7 +24,7 @@
 
       <!-- LIST -->
       <ul>
-        <li v-for="(items, index) in allTasks"> {{allTasks[index]}} <i class="far fa-trash-alt" @click="trash(index)"></i>
+        <li v-for="(items, index) in allTasks"> {{items}} <i class="far fa-trash-alt" @click="trash(index)"></i>
         </li>
       </ul>
 
