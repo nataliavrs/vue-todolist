@@ -1,0 +1,36 @@
+/* DEBUG */
+
+body {
+  text-align: center;
+  font-size: 20px;
+  padding: 50px;
+  background-color: salmon;
+
+}
+
+ul {
+  width: 30vw;
+  margin: auto;
+  padding: 50px;
+}
+
+ul > li {
+  list-style: none;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+ul li > i {
+  color: red;
+
+}
+
+input {
+  font-size: 25px;
+  border-radius: 5px;
+  border: none;
+}
