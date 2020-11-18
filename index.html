@@ -17,7 +17,7 @@
       <input type="button" name="" value="Create" @click="createTask">
 
       <ul>
-        <li v-for="(items, index) in allTasks"> {{allTasks[index]}} <i class="far fa-trash-alt" @click="trash"></i>
+        <li v-for="(items, index) in allTasks"> {{allTasks[index]}} <i class="far fa-trash-alt" @click="trash(index)"></i>
         </li>
       </ul>
 
