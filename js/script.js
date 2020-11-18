@@ -9,9 +9,10 @@ var app = new Vue({
       console.log('delete task');
     },
     createTask: function () {
-      
+
       this.allTasks.push('inputTask')
       console.log(this.allTasks);
+
     }
 
 
