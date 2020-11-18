@@ -1,12 +1,22 @@
 var app = new Vue({
   el: "#root",
   data: {
-    newTask: "ciao"
+    inputTask: "",
+    allTasks: [],
   },
   methods: {
     trash: function() {
-      console.log('ciao');
+      console.log('delete task');
+    },
+    createTask: function () {
+      
+      this.allTasks.push('inputTask')
+      console.log(this.allTasks);
     }
+
+
   }
+
+
 
 });
