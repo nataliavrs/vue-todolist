@@ -12,10 +12,17 @@
 
     <div id="root">
 
-      <input type="text" name="" value="" placeholder="New task" v-model="inputTask">
+      <!-- TITLES -->
+      <h1>To-do List</h1>
+      <p>Add a new task:</p>
 
-      <input type="button" name="" value="Create" @click="createTask">
+      <!-- WRITE TASK -->
+      <input type="text" value="" placeholder="New task" v-model="inputTask">
 
+      <!-- ADD ITEM TO LIST -->
+      <input type="button" value="Add to your list" @click="createTask">
+
+      <!-- LIST -->
       <ul>
         <li v-for="(items, index) in allTasks"> {{allTasks[index]}} <i class="far fa-trash-alt" @click="trash(index)"></i>
         </li>
