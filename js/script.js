@@ -1,11 +1,16 @@
 var app = new Vue({
   el: "#root",
   data: {
+
+    listMessage: "Add a new task for ",
+    yourName: "Natália",
+    todayDate: new Date() ,
     indexControl: 99, // delete later
     checkList: [],
     doneTask: "",
     inputTask: "",
     allTasks: [],
+    // totalTask: allTasks.length
   },
   methods: {
     createTask: function () {
@@ -30,6 +35,7 @@ var app = new Vue({
         console.log(this.checkList);
 
     }
+
 
   }
 

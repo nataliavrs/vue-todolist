@@ -26,28 +26,44 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 
 }
 
 /* first section: title and input */
 
 .onesection-container {
-  background-color: blue;
+  background-color: lightblue;
 }
 
-input {
-  font-size: 25px;
+[type="text"] {
+  font-size: 0.9em;
+  color: grey;
   border-radius: 5px;
-  border: none;
-  background-color: red;
+  border: solid 1px lightgrey;
+  padding: 8px;
+  background-color: lightgrey;
+  width: 30vw;
 }
+
+[type="button"] {
+  font-size: 0.9em;
+  color: black;
+  border-radius: 5px;
+  border: solid 1px lightgrey;
+  padding: 8px;
+  background-color: grey;
+  width: 15vw;
+}
+
+
 
 /* second section: to-do list */
 
 .twosection-container {
   background-color: white;
   overflow: scroll;
-  max-height: 64vh;
+  max-height: 60vh;
 }
 
 ul {

@@ -17,8 +17,10 @@
         <section class="onesection-container">
 
           <!-- TITLES -->
-          <h1>To-do List</h1>
-          <p>Add a new task:</p>
+          <h1>Welcome back, {{yourName}}.   </h1>
+
+          <p>{{listMessage}} {{todayDate}}</p>
+          <!-- <p>{{totalTask}}</p> -->
 
           <!-- WRITE TASK -->
           <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
