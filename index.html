@@ -26,7 +26,13 @@
           <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
 
           <!-- ADD ITEM TO LIST -->
-          <input type="button" value="Add to your list" @click="createTask">
+          <!-- <input type="button" value="Add to your list" @click="createTask"> -->
+
+          <div class="add-container" @click="createTask">
+            <i class="fas fa-plus" ></i>
+          </div>
+
+
 
         </section>
         <!-- end first section: title and input -->

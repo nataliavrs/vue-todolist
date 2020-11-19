@@ -9,7 +9,9 @@
 body {
   font-size: 20px;
   font-family: "Nunito";
-  /* position: relative; */
+  background-image: url("../img/bg-todo.jpg");
+  background-size: cover;
+
 
 }
 
@@ -17,7 +19,7 @@ body {
 
 .main-container {
   background-color: white;
-  box-shadow: 1px 1px 10px 1px;
+  box-shadow: 1px 2px 7px 1px #505250;
   min-height: 80vh;
   max-height: 80vh;
   min-width: 50vw;
@@ -27,13 +29,19 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  border-radius: 10px;
 
 }
 
 /* first section: title and input */
 
+h1 {
+  color: #FBA343;
+}
+
 .onesection-container {
   background-color: lightblue;
+  border-radius: 10px;
 }
 
 [type="text"] {
@@ -56,6 +64,27 @@ body {
   width: 15vw;
 }
 
+.add-container {
+  background-color: #FA4166;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  display: inline-block;
+  /* padding: 20px; */
+  position: relative;
+}
+
+.fa-plus {
+  color: white;
+  font-size: 0.8em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
 
 
 /* second section: to-do list */
@@ -63,7 +92,7 @@ body {
 .twosection-container {
   background-color: white;
   overflow: scroll;
-  max-height: 60vh;
+  max-height: 55vh;
 }
 
 ul {
