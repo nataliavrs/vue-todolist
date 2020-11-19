@@ -17,10 +17,10 @@
         <section class="onesection-container">
 
           <!-- TITLES -->
-          <h1>Welcome back, {{yourName}}.   </h1>
 
-          <p>{{listMessage}} {{todayDate}}</p>
-          <!-- <p>{{totalTask}}</p> -->
+          <!-- <p class="today-date">{{dateDay}}</p> -->
+          <p class="today-month"> {{getHumanDate()}} </p>
+          <p>{{allTasks.length}}</p>
 
           <!-- WRITE TASK -->
           <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
@@ -31,8 +31,6 @@
           <div class="add-container" @click="createTask">
             <i class="fas fa-plus" ></i>
           </div>
-
-
 
         </section>
         <!-- end first section: title and input -->

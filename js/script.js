@@ -4,13 +4,12 @@ var app = new Vue({
 
     listMessage: "Add a new task for ",
     yourName: "Natália",
-    todayDate: new Date() ,
+    todayDate: 0,
     indexControl: 99, // delete later
     checkList: [],
     doneTask: "",
     inputTask: "",
     allTasks: [],
-    // totalTask: allTasks.length
   },
   methods: {
     createTask: function () {
@@ -27,14 +26,20 @@ var app = new Vue({
       this.allTasks.splice(index, 1);
 
     },
-    checkItem: function (items, index) {
+    checkItem: function(items, index) {
 
       // this.indexControl = index;
 
         this.checkList.push(items);
         console.log(this.checkList);
 
-    }
+    },
+    getHumanDate: function() {
+      let day = this.todayDate.getDate(); //restituisce il giorno
+      let month = this.todayDate.getMonth() + 1 //restituisce il mese (da 0 a 11) quindi per farlo quadrare da 1 lo incremento
+      let year = this.todayDate.getFullYear() //restituisce l'anno (2020)
+      return `${day}/${month}/${year}` //restituisco una stringa tipo 19/11/2020
+    },
 
 
   }

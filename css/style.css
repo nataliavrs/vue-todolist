@@ -35,8 +35,16 @@ body {
 
 /* first section: title and input */
 
-h1 {
+.today-date {
   color: #FBA343;
+  text-align: left;
+
+}
+
+.today-month {
+  color: #FBA343;
+  text-align: left;
+
 }
 
 .onesection-container {
@@ -70,8 +78,9 @@ h1 {
   width: 60px;
   border-radius: 50px;
   display: inline-block;
-  /* padding: 20px; */
   position: relative;
+  cursor: pointer;
+
 }
 
 .fa-plus {
@@ -84,8 +93,6 @@ h1 {
 
 
 }
-
-
 
 /* second section: to-do list */
 
@@ -122,6 +129,7 @@ ul li > i {
   color: red;
   position: absolute;
   right: 10px;
+  cursor: pointer;
 
 }
 
