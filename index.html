@@ -17,14 +17,14 @@
       <p>Add a new task:</p>
 
       <!-- WRITE TASK -->
-      <input type="text" value="" placeholder="New task" v-model="inputTask">
+      <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
 
       <!-- ADD ITEM TO LIST -->
       <input type="button" value="Add to your list" @click="createTask">
 
       <!-- LIST -->
       <ul>
-        <li v-for="(items, index) in allTasks"> {{items}} <i class="far fa-trash-alt" @click="trash(index)"></i>
+        <li v-for="(items, index) in allTasks"> {{items}} <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
         </li>
       </ul>
 

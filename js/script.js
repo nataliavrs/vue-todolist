@@ -1,9 +1,8 @@
 var app = new Vue({
   el: "#root",
   data: {
-    index: 0,
     inputTask: "",
-    allTasks: []
+    allTasks: [],
   },
   methods: {
     createTask: function () {
@@ -11,7 +10,7 @@ var app = new Vue({
       this.allTasks.push(this.inputTask);
 
     },
-    trash: function(index) {
+    deleteTask: function(index) {
 
       this.allTasks.splice(index, 1);
 
