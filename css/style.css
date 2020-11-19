@@ -1,16 +1,41 @@
-/* DEBUG */
+/* GENERAL */
 
 * {
+  padding: 0;
+  margin: 0;
   font-family: "Nunito";
+  box-sizing: border-box;
 }
 
 body {
-  text-align: center;
+  /* text-align: center; */
   font-size: 20px;
-  padding: 50px;
-  background-color: salmon;
+  /* padding: 50px; */
+  background-color: pink;
+
+}
+
+/* MAIN */
+
+/* first section: title and input */
+
+.onesection-container {
+  background-color: blue;
+}
 
 
+
+input {
+  font-size: 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+}
+
+/* second section: to-do list */
+
+.twosection-container {
+  background-color: green;
 }
 
 ul {
@@ -43,15 +68,11 @@ ul li > i {
 
 }
 
-input {
-  font-size: 25px;
-  border-radius: 5px;
-  border: none;
-}
+
 
 /* CHECKED ITEM */
 
 .checked {
   color: lightgrey;
-  
+
 }

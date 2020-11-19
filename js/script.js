@@ -1,6 +1,8 @@
 var app = new Vue({
   el: "#root",
   data: {
+    indexControl: 99, // delete later
+    checkList: [],
     doneTask: "",
     inputTask: "",
     allTasks: [],
@@ -20,11 +22,12 @@ var app = new Vue({
       this.allTasks.splice(index, 1);
 
     },
-    checkItem: function (index) {
+    checkItem: function (items, index) {
 
-      this.doneTask = 'checked';
+      // this.indexControl = index;
 
-      console.log(index);
+        this.checkList.push(items);
+        console.log(this.checkList);
 
     }
 

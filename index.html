@@ -11,40 +11,54 @@
   <body>
 
     <div id="root">
+      <main>
 
-      <!-- TITLES -->
-      <h1>To-do List</h1>
-      <p>Add a new task:</p>
+        <!-- first section: title and input -->
+        <section class="onesection-container">
 
-      <!-- WRITE TASK -->
-      <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
+          <!-- TITLES -->
+          <h1>To-do List</h1>
+          <p>Add a new task:</p>
 
-      <!-- ADD ITEM TO LIST -->
-      <input type="button" value="Add to your list" @click="createTask">
+          <!-- WRITE TASK -->
+          <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
 
-      <!-- LIST -->
-      <ul>
+          <!-- ADD ITEM TO LIST -->
+          <input type="button" value="Add to your list" @click="createTask">
 
-        <li :class="doneTask" v-for="(items, index) in allTasks"> {{items}}
+        </section>
+        <!-- end first section: title and input -->
 
-          <input type="checkbox" name="" value="" @click="checkItem(index)">
 
-          <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+        <!-- second section: to-do list -->
+        <section class="twosection-container">
 
-        </li>
+          <ul>
 
-        <!-- <div class="email">
-          <div class="subject">
-          <input type="checkbox">
-          &#9733; Oggetto della mail -
-          </div>
-          <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </div>
-        </div> -->
+            <li :class="[{checked: index === indexControl}]" v-for="(items, index) in allTasks"> {{items}}
 
-      </ul>
+              <input type="checkbox" name="" value="" @click="checkItem(items, index)">
 
+              <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+
+            </li>
+
+            <!-- <div class="email">
+              <div class="subject">
+              <input type="checkbox">
+              &#9733; Oggetto della mail -
+              </div>
+              <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+            </div> -->
+
+          </ul>
+
+        </section>
+        <!-- end second section: to-do list -->
+
+      </main>
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
