@@ -4,7 +4,7 @@ var app = new Vue({
 
     listMessage: "Add a new task for ",
     yourName: "Natália",
-    todayDate: 0,
+    todayDate: new Date (),
     indexControl: 99, // delete later
     checkList: [],
     doneTask: "",
@@ -35,11 +35,27 @@ var app = new Vue({
 
     },
     getHumanDate: function() {
-      let day = this.todayDate.getDate(); //restituisce il giorno
-      let month = this.todayDate.getMonth() + 1 //restituisce il mese (da 0 a 11) quindi per farlo quadrare da 1 lo incremento
-      let year = this.todayDate.getFullYear() //restituisce l'anno (2020)
-      return `${day}/${month}/${year}` //restituisco una stringa tipo 19/11/2020
+
+      let day = this.todayDate.getDate(); // get current day
+
+      let month = this.todayDate.getMonth(); // get current month
+      const months = ["January", "February","March", "April","May", "June","July","August","September", "October", "November", "December"];
+
+      for (let i = 0; i < months.length; i++) {
+        if (month == i) {
+          month = months[i]; // current month value into month name
+        }
+      }
+
+      return `${month} ${day}th` // output
     },
+    year: function() {
+
+      let year = this.todayDate.getFullYear() // get current year
+
+      return `${year}` // output
+    },
+
 
 
   }

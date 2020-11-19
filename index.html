@@ -18,23 +18,27 @@
 
           <!-- TITLES -->
 
-          <!-- <p class="today-date">{{dateDay}}</p> -->
-          <p class="today-month"> {{getHumanDate()}} </p>
-          <p>{{allTasks.length}}</p>
+          <div class="date-number">
+            <span class="today-date"> {{getHumanDate()}} </span>
+            <span class="task-length">{{allTasks.length}} Tasks</span>
+          </div>
+
+          <span class="year">{{year()}}</span>
 
           <!-- WRITE TASK -->
-          <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
+          <div class="input-container">
 
-          <!-- ADD ITEM TO LIST -->
-          <!-- <input type="button" value="Add to your list" @click="createTask"> -->
+            <input type="text" placeholder="New task" v-model="inputTask" v-on:keyup.enter="createTask">
 
-          <div class="add-container" @click="createTask">
-            <i class="fas fa-plus" ></i>
+            <!-- ADD ITEM TO LIST -->
+            <div class="add-container" @click="createTask">
+              <i class="fas fa-plus" ></i>
+            </div>
+
           </div>
 
         </section>
         <!-- end first section: title and input -->
-
 
         <!-- second section: to-do list -->
         <section class="twosection-container">
