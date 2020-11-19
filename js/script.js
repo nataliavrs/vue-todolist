@@ -47,7 +47,7 @@ var app = new Vue({
         }
       }
 
-      return `${month} ${day}th` // output
+      return `${month} ${day}` // output
     },
     year: function() {
 

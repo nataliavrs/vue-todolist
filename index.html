@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">  
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>To-do List</title>
@@ -28,7 +32,7 @@
           <div class="input-container">
             <input type="text" placeholder="Add a new task" v-model="inputTask" v-on:keyup.enter="createTask">
 
-            
+
             <!-- ADD ITEM TO LIST -->
             <div class="add-container" @click="createTask">
               <i class="fas fa-plus" ></i>
