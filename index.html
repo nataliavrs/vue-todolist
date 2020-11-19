@@ -24,8 +24,25 @@
 
       <!-- LIST -->
       <ul>
-        <li v-for="(items, index) in allTasks"> {{items}} <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+
+        <li :class="doneTask" v-for="(items, index) in allTasks"> {{items}}
+
+          <input type="checkbox" name="" value="" @click="checkItem(index)">
+
+          <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+
         </li>
+
+        <!-- <div class="email">
+          <div class="subject">
+          <input type="checkbox">
+          &#9733; Oggetto della mail -
+          </div>
+          <div class="content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </div>
+        </div> -->
+
       </ul>
 
     </div>

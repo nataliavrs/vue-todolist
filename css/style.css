@@ -23,14 +23,23 @@ ul > li {
   list-style: none;
   background-color: white;
   border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   padding: 10px;
+  text-align: center;
+
 
 }
 
+ul > li > input {
+  position: absolute;
+  left: 0px;
+}
+
 ul li > i {
+  font-size: 20px;
   color: red;
+  position: absolute;
+  right: 10px;
 
 }
 
@@ -38,4 +47,11 @@ input {
   font-size: 25px;
   border-radius: 5px;
   border: none;
+}
+
+/* CHECKED ITEM */
+
+.checked {
+  color: lightgrey;
+  
 }
