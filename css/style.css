@@ -45,21 +45,24 @@ body {
   color: #FBA343;
   text-align: left;
   font-weight: bolder;
-  font-size: 2em;
+  font-size: 1.8em;
 
 }
 
 .year {
-  color: #FA4166;
-  font-size: 2em;
+  color: lightgrey;
+  font-size: 1.2em;
   text-align: left;
+  /* font-weight: bolder; */
+  /* font-style: italic; */
 
 }
 
 .task-length {
-
-  font-size: 2em;
+  font-size: 0.9em;
   color: lightgrey;
+  margin-top: 20px;
+
 }
 
 .today-month {
@@ -71,19 +74,46 @@ body {
 .onesection-container {
   /* background-color: lightblue; */
   border-radius: 10px;
+  padding: 30px;
+}
+
+/* INPUT */
+
+.input-container {
+  /* background-color: green; */
+  /* text-align: right; */
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 0 20px;
+  margin-top: 30px;
+
+
+
 }
 
 [type="text"] {
-  font-size: 0.9em;
-  color: grey;
+  font-family: "Nunito";
+  font-size: 1em;
+  color: #FBA343;
+
   border-radius: 5px;
   border: solid 1px lightgrey;
   padding: 8px;
-  background-color: lightgrey;
+  background-color: white;
   width: 30vw;
+  height: 50px;
+  /* align-self: center; */
+
 }
 
-[type="button"] {
+::placeholder {
+  color: lightgrey;
+  font-size: 0.9em;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* [type="button"] {
   font-size: 0.9em;
   color: black;
   border-radius: 5px;
@@ -91,16 +121,22 @@ body {
   padding: 8px;
   background-color: grey;
   width: 15vw;
-}
+
+} */
 
 .add-container {
   background-color: #FA4166;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+  margin: 0 0 0 10px;
   border-radius: 50px;
   display: inline-block;
   position: relative;
   cursor: pointer;
+  /* margin-top: 10px; */
+  /* align-self: flex-start; */
+  /* margin-left: 40px; */
+  /* align-self: center; */
 
 }
 
@@ -121,6 +157,7 @@ body {
   background-color: white;
   overflow: scroll;
   max-height: 55vh;
+  border-top: solid 1px lightgrey;
 }
 
 ul {
