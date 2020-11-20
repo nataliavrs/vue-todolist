@@ -28,11 +28,11 @@
 
           <span class="year">{{year()}}</span>
 
-          <!-- WRITE TASK -->
+          <!-- NEW TASK INPUT -->
           <div class="input-container">
             <input type="text" placeholder="Add new task" v-model="inputTask" v-on:keyup.enter="createTask">
 
-            <!-- ADD ITEM TO LIST -->
+            <!-- ADD TASK TO LIST -->
             <div class="add-container" @click="createTask">
               <i class="fas fa-plus" ></i>
             </div>
@@ -59,9 +59,7 @@
                 </div>
 
               </li>
-
             </ul>
-
           </div>
 
           <div class="notasks" v-if="allTasks.length < 1">
@@ -75,15 +73,19 @@
 
       <!-- REPEATED ITEM -->
       <div class="repeated-item" v-if="repeatedItem">
+
         <div class="repeated-message">
           <p>Hey, "{{inputTask}}" is already on your list.</p>
+
           <div>
             <i class="fas fa-plus-circle" @click="ripetutoAdd"></i>
             <span>Add it</span>
             <i class="far fa-trash-alt" @click="ripetutoDelete"></i>
             <span>Delete it</span>
           </div>
+          
         </div>
+
       </div>
 
     </div>

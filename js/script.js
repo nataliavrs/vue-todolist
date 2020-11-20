@@ -14,6 +14,7 @@ var app = new Vue({
     allTasks: [],
   },
   methods: {
+    // ADD NEW TASK TO LIST
     createTask: function () {
 
       if (this.inputTask == "") {
@@ -27,11 +28,13 @@ var app = new Vue({
       }
 
     },
+    // DELETE TASK
     deleteTask: function(index) {
 
       this.allTasks.splice(index, 1);
 
     },
+    // CHECK ITEM ON LIST
     checkItem: function(items, index) {
 
         if (this.checkedItem == false) {
@@ -46,6 +49,7 @@ var app = new Vue({
         console.log(this.checkList);
 
     },
+    // CURRENT MONTH AND DAY
     getHumanDate: function() {
 
       let day = this.todayDate.getDate(); // get current day
@@ -62,12 +66,14 @@ var app = new Vue({
       return `${month} ${day}` // output
 
     },
+    // CURRENT YEAR
     year: function() {
 
       let year = this.todayDate.getFullYear() // get current year
       return `${year}` // output
 
     },
+    // NUMERAL DATE
     numeralDate: function() {
 
         let day = this.todayDate.getDate(); //restituisce il giorno
@@ -77,6 +83,7 @@ var app = new Vue({
         return `${day}/${month}/${year}` //restituisco una stringa tipo 19/11/2020
 
     },
+    // CURRENT HOUR TASK CREATED
     hour: function() {
 
       let seconds = this.nowHour.getSeconds();
@@ -92,6 +99,7 @@ var app = new Vue({
       return `${hour}:${minute}:${seconds}`
 
     },
+    // REPEATED TASK
     ripetutoDelete: function () {
       this.inputTask = "";
       this.repeatedItem = false;
