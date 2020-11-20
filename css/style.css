@@ -170,3 +170,14 @@ ul li > i {
   color: lightgrey;
 
 }
+
+/* NO TASKS DIV */
+
+.notasks {
+  text-align: center;
+  font-size: 1.7em;
+  color: #FA4166;
+  font-weight: bolder;
+  
+
+}

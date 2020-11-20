@@ -1,7 +1,7 @@
 var app = new Vue({
   el: "#root",
   data: {
-
+    noTasks: true,
     listMessage: "Add a new task for ",
     yourName: "Natália",
     todayDate: new Date (),
@@ -55,8 +55,22 @@ var app = new Vue({
 
       return `${year}` // output
     },
+    numeralDate: function() {
 
+        let day = this.todayDate.getDate(); //restituisce il giorno
+        let month = this.todayDate.getMonth() + 1 //restituisce il mese (da 0 a 11) quindi per farlo quadrare da 1 lo incremento
+        let year = this.todayDate.getFullYear() //restituisce l'anno (2020)
+        return `${day}/${month}/${year}` //restituisco una stringa tipo 19/11/2020
 
+    },
+    // DIV NO TASKS DEBUG
+    noTask: function () {
+      if (this.allTasks.length > 0) {
+        this.noTasks = false;
+      } else {
+        this.noTasks = true;
+      }
+    }
 
   }
 

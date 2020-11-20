@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -46,27 +46,25 @@
         <!-- second section: to-do list -->
         <section class="twosection-container">
 
-          <ul>
+          <div class="singletask-container">
+            <ul>
+              <li :class="[{checked: index === indexControl}]" v-for="(items, index) in allTasks"> {{items}}
 
-            <li :class="[{checked: index === indexControl}]" v-for="(items, index) in allTasks"> {{items}}
+                <input type="checkbox" name="" value="" @click="checkItem(items, index)">
 
-              <input type="checkbox" name="" value="" @click="checkItem(items, index)">
 
-              <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+                <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
 
-            </li>
+                <span class=""> {{numeralDate()}} </span>
 
-            <!-- <div class="email">
-              <div class="subject">
-              <input type="checkbox">
-              &#9733; Oggetto della mail -
-              </div>
-              <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </div>
-            </div> -->
+              </li>
+            </ul>
 
-          </ul>
+          </div>
+
+          <div class="notasks" v-if="allTasks.length < 1">
+            No tasks today. Enjoy! <i class="far fa-smile-wink"></i>
+          </div>
 
         </section>
         <!-- end second section: to-do list -->
