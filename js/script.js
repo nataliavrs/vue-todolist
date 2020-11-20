@@ -6,12 +6,10 @@ var app = new Vue({
 
     repeatedItem: false,
     noTasks: true,
-    listMessage: "Add a new task for ",
-    yourName: "Natália",
+
     todayDate: new Date (),
     nowHour: new Date (),
 
-    doneTask: "",
     inputTask: "",
     allTasks: [],
   },
@@ -19,14 +17,13 @@ var app = new Vue({
     createTask: function () {
 
       if (this.inputTask == "") {
-        // nothing happens if user doesn't write a task
+        // empty input invalid
       } else if (this.allTasks.includes(this.inputTask)) {
         this.repeatedItem = true;
       } else {
         this.allTasks.push(this.inputTask);
         this.inputTask = "";
         this.repeatedItem = false;
-
       }
 
     },
