@@ -52,15 +52,22 @@
 
                 <input type="checkbox" name="" value="" @click="checkItem(items, index)">
 
-
                 <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
 
-                <span class=""> {{numeralDate()}} </span>
+                <div class="hourday-container">
+                  <span class=""> {{numeralDate()}} </span>
+                  <span class=""> {{hour()}} </span>
+                </div>
+
+
 
               </li>
+
             </ul>
 
           </div>
+
+
 
           <div class="notasks" v-if="allTasks.length < 1">
             No tasks today. Enjoy! <i class="far fa-smile-wink"></i>
@@ -69,7 +76,21 @@
         </section>
         <!-- end second section: to-do list -->
 
+
+
       </main>
+
+      <!-- REPEATED ITEM -->
+      <div class="repeated-item" v-if="repeatedItem">
+        <div class="repeated-message">
+          <i>Hey, "{{inputTask}}" is already on your list.</i>
+          <span>Add it anyway:</span>
+          <i class="fas fa-plus-circle" @click="ripetutoAdd"></i>
+          <span>Don't add it</span>
+          <i class="far fa-trash-alt" @click="ripetutoDelete"></i>
+        </div>
+      </div>
+
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>

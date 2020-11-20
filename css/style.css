@@ -61,7 +61,7 @@ body {
 
 .task-length {
   font-size: 0.9em;
-  color: lightgrey;
+  color: #bdbdbd;
   margin-top: 20px;
 
 }
@@ -87,7 +87,7 @@ body {
   color: #FA4166;
   font-weight: bold;
   border-radius: 10px;
-  border: solid 1px lightgrey;
+  border: solid 1px #bdbdbd;
   padding: 8px;
   background-color: white;
   width: 30vw;
@@ -96,9 +96,10 @@ body {
 }
 
 ::placeholder {
-  color: lightgrey;
+  color: #bdbdbd;
   font-weight: normal;
   text-align: center;
+
 }
 
 .add-container {
@@ -129,23 +130,25 @@ body {
 .twosection-container {
   background-color: white;
   overflow: scroll;
-  max-height: 55vh;
+  max-height: 45vh;
   border-top: solid 1px lightgrey;
+  /* border-radius: 10px; */
 }
 
 ul {
-  width: 30vw;
+  width: 35vw;
   margin: auto;
-  padding: 50px;
+  padding: 5px;
 }
 
 ul > li {
   list-style: none;
-  background-color: white;
-  border-radius: 20px;
+  border-bottom: solid 0.5px lightgrey;
   position: relative;
   padding: 10px;
   text-align: center;
+  text-transform: capitalize;
+
 
 }
 
@@ -155,29 +158,73 @@ ul > li > input {
 }
 
 ul li > i {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #FA4166;
   position: absolute;
   right: 10px;
   cursor: pointer;
+  top: 20px;
 
 }
 
 
+
+
+.hourday-container {
+  font-size: 0.6em;
+  color: grey;
+  /* font-style: italic; */
+}
+
+
+[type="checkbox"] {
+  position: absolute;
+  color: red;
+  top: 23px;
+}
+
 /* CHECKED ITEM */
 
 .checked {
-  color: lightgrey;
+  color: #bdbdbd;
 
+}
+
+/* REPEATED ITEM */
+
+.repeated-item {
+  background-color: black;
+  opacity: 80%;
+  font-size: 1em;
+  width: 30vw;
+  height: 20vh;
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+
+}
+
+.repeated-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
 /* NO TASKS DIV */
 
 .notasks {
   text-align: center;
-  font-size: 1.7em;
-  color: #FA4166;
+  font-size: 1.4em;
+  color: #FBA343;
   font-weight: bolder;
-  
+  margin-top: 100px;
+  padding: 5px;
+
+
 
 }
