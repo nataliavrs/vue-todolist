@@ -28,7 +28,6 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* text-align: center; */
   border-radius: 10px;
 
 }
@@ -41,13 +40,11 @@ body {
 }
 
 .today-date {
-
   color: #FA4166;
   text-align: left;
   font-weight: bolder;
   font-size: 2.2em;
   font-family: 'Lobster';
-
 
 }
 
@@ -200,17 +197,17 @@ ul li > i {
 /* REPEATED ITEM */
 
 .repeated-item {
-  background-color: black;
-  opacity: 80%;
+  background-color: grey;
+  /* opacity: 85%; */
   font-size: 1em;
   width: 30vw;
-  height: 20vh;
+  min-height: 10vh;
   position: absolute;
   z-index: 99;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50px;
+  border-radius: 10px;
 
 }
 
@@ -220,6 +217,9 @@ ul li > i {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  width: 90%;
+  text-align: center;
+  padding: 10px;
 }
 
 /* NO TASKS DIV */

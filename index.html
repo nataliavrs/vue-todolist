@@ -52,8 +52,6 @@
 
                 <input type="checkbox" @click="checkItem(items, index)">
 
-                <!-- :class="( i===photoIndex ? 'active' : '')" -->
-
                 <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
 
                 <div class="hourday-container">
@@ -84,12 +82,19 @@
 
       <!-- REPEATED ITEM -->
       <div class="repeated-item" v-if="repeatedItem">
+
         <div class="repeated-message">
-          <i>Hey, "{{inputTask}}" is already on your list.</i>
-          <span>Add it anyway:</span>
-          <i class="fas fa-plus-circle" @click="ripetutoAdd"></i>
-          <span>Don't add it</span>
-          <i class="far fa-trash-alt" @click="ripetutoDelete"></i>
+          <p>Hey, "{{inputTask}}" is already on your list.</p>
+
+          <div>
+            
+            <i class="fas fa-plus-circle" @click="ripetutoAdd"></i>
+            <span>Add it</span>
+            <i class="far fa-trash-alt" @click="ripetutoDelete"></i>
+            <span>Delete it</span>
+
+          </div>
+
         </div>
       </div>
 

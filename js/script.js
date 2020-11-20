@@ -37,8 +37,6 @@ var app = new Vue({
     },
     checkItem: function(items, index) {
 
-        // this.checkedItem = true;
-
         if (this.checkedItem == false) {
           this.checkList.push(this.allTasks[index]);
           this.checkedItem = true;
