@@ -30,7 +30,7 @@
 
           <!-- WRITE TASK -->
           <div class="input-container">
-            <input type="text" placeholder="Add a new task" v-model="inputTask" v-on:keyup.enter="createTask">
+            <input type="text" placeholder="Add new task" v-model="inputTask" v-on:keyup.enter="createTask">
 
 
             <!-- ADD ITEM TO LIST -->
@@ -48,15 +48,17 @@
 
           <div class="singletask-container">
             <ul>
-              <li :class="[{checked: index === indexControl}]" v-for="(items, index) in allTasks"> {{items}}
+              <li v-for="(items, index) in allTasks" :class="( checkList.includes(items) ? 'checked' : '')" > {{items}}
 
-                <input type="checkbox" name="" value="" @click="checkItem(items, index)">
+                <input type="checkbox" @click="checkItem(items, index)">
+
+                <!-- :class="( i===photoIndex ? 'active' : '')" -->
 
                 <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
 
                 <div class="hourday-container">
-                  <span class=""> {{numeralDate()}} </span>
-                  <span class=""> {{hour()}} </span>
+                  <span class="date-task" :class="( checkList.includes(items) ? 'checked' : '')"> {{numeralDate()}}  {{hour()}}
+                  </span>
                 </div>
 
 

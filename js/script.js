@@ -1,14 +1,16 @@
 var app = new Vue({
   el: "#root",
   data: {
+    checkList: [],
+    checkedItem: false,
+
     repeatedItem: false,
     noTasks: true,
     listMessage: "Add a new task for ",
     yourName: "Natália",
     todayDate: new Date (),
     nowHour: new Date (),
-    indexControl: 99, // delete later
-    checkList: [],
+
     doneTask: "",
     inputTask: "",
     allTasks: [],
@@ -35,9 +37,17 @@ var app = new Vue({
     },
     checkItem: function(items, index) {
 
-      // this.indexControl = index;
+        // this.checkedItem = true;
 
-        this.checkList.push(items);
+        if (this.checkedItem == false) {
+          this.checkList.push(this.allTasks[index]);
+          this.checkedItem = true;
+        } else if (this.checkedItem == true) {
+          this.checkList.splice(index, 1);
+          this.checkedItem = false;
+        }
+
+        console.log(this.checkedItem);
         console.log(this.checkList);
 
     },
