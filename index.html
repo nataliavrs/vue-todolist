@@ -47,14 +47,14 @@
 
           <div class="singletask-container">
             <ul>
-              <li v-for="(items, index) in allTasks" :class="( checkList.includes(items) ? 'checked' : '')" > {{items}}
+              <li id="task" v-for="(items, index) in allTasks" :class="( checkList.includes(items) ? 'checked' : '')" > {{items}}
 
                 <input type="checkbox" @click="checkItem(items, index)">
 
-                <i class="far fa-trash-alt" @click="deleteTask(index)"></i>
+                <i class="far fa-trash-alt" @click="deleteTask(items, index)"></i>
 
                 <div class="hourday-container">
-                  <span class="date-task" :class="( checkList.includes(items) ? 'checked' : '')"> {{numeralDate()}}  {{hour()}}
+                  <span class="date-task" :class="( checkList.includes(items) ? 'checked' : '')"> {{numeralDate()}}  {{hourArray[index]}}
                   </span>
                 </div>
 

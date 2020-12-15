@@ -2,51 +2,62 @@ var app = new Vue({
   el: "#root",
   data: {
     checkList: [],
-    checkedItem: false,
 
     repeatedItem: false,
     noTasks: true,
 
     todayDate: new Date (),
-    nowHour: new Date (),
+    
+    hourArray: [],
 
     inputTask: "",
     allTasks: [],
   },
   methods: {
+    // CURRENT HOUR TASK CREATED
+    hour: function() {
+
+      let nowHour = new Date ();
+
+      let seconds = nowHour.getSeconds();
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      let hour = nowHour.getHours()
+      let minute = nowHour.getMinutes()
+      if (minute < 10) {
+        minute = "0" + minute;
+      }
+
+      return `${hour}:${minute}:${seconds}`
+
+    },
     // ADD NEW TASK TO LIST
     createTask: function () {
 
-      if (this.inputTask == "") {
-        // empty input invalid
-      } else if (this.allTasks.includes(this.inputTask)) {
+      if (this.allTasks.includes(this.inputTask)) {
         this.repeatedItem = true;
-      } else {
+      } else if (this.inputTask != "") {
         this.allTasks.push(this.inputTask);
         this.inputTask = "";
         this.repeatedItem = false;
+        this.hourArray.push(this.hour());
       }
 
     },
     // DELETE TASK
-    deleteTask: function(index) {
-
+    deleteTask: function(items, index) {
       this.allTasks.splice(index, 1);
-
     },
     // CHECK ITEM ON LIST
     checkItem: function(items, index) {
 
-        if (this.checkedItem == false) {
-          this.checkList.push(this.allTasks[index]);
-          this.checkedItem = true;
-        } else if (this.checkedItem == true) {
-          this.checkList.splice(index, 1);
-          this.checkedItem = false;
-        }
-
-        console.log(this.checkedItem);
-        console.log(this.checkList);
+      if (this.checkList.includes(items) == false) {
+        this.checkList.push(items);
+      } else if (this.checkList.includes(items) == true) {
+        var rightIndex = this.checkList.indexOf(items);
+        this.checkList.splice(rightIndex, 1);
+      }
 
     },
     // CURRENT MONTH AND DAY
@@ -82,23 +93,7 @@ var app = new Vue({
 
         return `${day}/${month}/${year}` //restituisco una stringa tipo 19/11/2020
 
-    },
-    // CURRENT HOUR TASK CREATED
-    hour: function() {
-
-      let seconds = this.nowHour.getSeconds();
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      let hour = this.nowHour.getHours()
-      let minute = this.nowHour.getMinutes()
-      if (minute < 10) {
-        minute = "0" + minute;
-      }
-
-      return `${hour}:${minute}:${seconds}`
-
-    },
+    },  
     // REPEATED TASK
     ripetutoDelete: function () {
       this.inputTask = "";
@@ -107,8 +102,8 @@ var app = new Vue({
     ripetutoAdd: function () {
       this.allTasks.push(this.inputTask);
       this.repeatedItem = false;
+      this.inputTask = "";
     }
-
 
   }
 
